@@ -29,7 +29,7 @@
 <body>
     @include('layouts.inc.admin-navbar')
     <div id="layoutSidenav">
-        @include('layouts.inc.admin-sidbar')
+        {{-- @include('layouts.inc.admin-sidbar') --}}
         <div id="layoutSidenav_content">
             <main>
                 @yield('content')

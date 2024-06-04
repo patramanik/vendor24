@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
 
 
 Route::middleware('auth')->group(function () {
@@ -33,8 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/publish',[CatagoryController::class, 'approval'])->name('admin.category.category-publish');
     Route::get('/admin/publisg_catagory/{id}',[CatagoryController::class, 'publish']);
     Route::get('/admin/not_publisg_catagory/{id}',[CatagoryController::class, 'hide']);
-    
-    
+
+
     // BlogPost
     Route::get('/admin/posts', [BlogPostController::class, 'show'])->name('admin.blogPost.posts');
     Route::get('/admin/addpost', [BlogPostController::class, 'create'])->name('admin.blogPost.addPost');
@@ -46,7 +49,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/post-publish', [BlogPostController::class, 'approval'])->name('admin.blogPost.publish-post');
     Route::get('/admin/publish_post/{id}', [BlogPostController::class, 'publish']);
     Route::get('/admin/not_publish_post/{id}', [BlogPostController::class, 'hide']);
-    
+
     Route::get('/admin/delet_commend/{id}', [AdminDashbordController::class, 'deletCommend']);
     Route::get('/dashbord/catagory', [AdminDashbordController::class, 'catagory']);
 
